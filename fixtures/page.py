@@ -11,14 +11,17 @@ def page() -> Page:
         browser = get_firefox_browser(playwright)
         context = get_context(browser)
         page_data = context.new_page()
+        page_data.set_viewport_size({"width": 1280, "height": 720})
     elif config.playwright.BROWSER == 'chrome':
         browser = get_chrome_browser(playwright)
         context = get_context(browser)
         page_data = context.new_page()
+        page_data.set_viewport_size({ "width": 1280, "height": 720 })
     else:
         browser = get_chrome_browser(playwright)
         context = get_context(browser)
         page_data = context.new_page()
+        page_data.set_viewport_size({"width": 1280, "height": 720})
     yield page_data
     for context in browser.contexts:
         context.close()

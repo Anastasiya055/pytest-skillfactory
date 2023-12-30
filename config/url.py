@@ -1,2 +1,2 @@
 class Url:
-    DOMAIN = 'https://ufa.rt.ru/'
+    DOMAIN = 'https://rt.ru/'
